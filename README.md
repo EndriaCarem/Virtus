@@ -1,20 +1,32 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img src="assets/logo.svg" alt="Logo Copiloto de Relatórios" width="520" />
+  <h1>Copiloto de Relatórios</h1>
+  <p><em>PoC do Desafio 01 — VIRTUS</em></p>
 </div>
 
-# Run and deploy your AI Studio app
+## Visão Geral
+Este projeto é um **Copiloto de Relatórios** que atua como assistente para analistas, com foco na **formatação** e **adequação** de relatórios técnicos de incentivos fiscais
+(**Regime Automotivo**, **Lei de Informática** e **MOVER**). A PoC automatiza a verificação de conformidade e a padronização do texto, permitindo que o profissional se
+concentre na análise do conteúdo.
 
-This contains everything you need to run your app locally.
+## Funcionalidades
+- **Entrada flexível**: cola de texto via área de transferência ou upload de arquivo.
+- **Reformatação automática**: melhora clareza, padroniza estilos e tom profissional.
+- **Checklist de conformidade**: extrai sugestões práticas alinhadas a regulamentos (Regime Automotivo, Lei de Informática, MOVER).
+- **Interface moderna**: glassmorphism, tema dinâmico (claro/escuro) — com **gradiente suave** no claro e **céu estrelado** no escuro.
+- **Resultados estruturados**: separação entre *texto ajustado* e *recomendações de conformidade*.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1StrK_LLYXFJ_XWDV2norWdJYjW51VPcU
+## Experiência de Usuário
+A aplicação adota **glassmorphism** e **temas dinâmicos**. Em **modo claro**, um gradiente suave reforça a leitura;
+em **modo escuro**, um **fundo de céu estrelado** torna o uso noturno mais imersivo.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Arquitetura (alto nível)
+```mermaid
+flowchart LR
+  U[Usuário] --> UI[Frontend (React/TypeScript)]
+  UI --> CLIP[Entrada: clipboard / upload]
+  UI --> API[(Serviço de análise)]
+  API --> GEM[API Google Gemini]
+  GEM --> API
+  API --> UI
+  UI --> OUT[Saída: Texto Ajustado + Recomendações]
