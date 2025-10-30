@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copiloto de Relatórios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media', // ou 'class'
+      theme: {
+        extend: {
+          // você pode estender o tema aqui se precisar
+        }
+      },
+      plugins: [
+        tailwind.plugins.typography,
+      ],
+    }
+  </script>
+  <style>
+    /* Estilos para os fundos e efeitos especiais */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .light-theme-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(120deg, #f0f9ff 0%, #e0f2fe 100%);
+      z-index: -1;
+    }
+    .yellow-dot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #facc15; /* yellow-400 */
+      border-radius: 50%;
+      bottom: 10%;
+      right: 15%;
+      box-shadow: 0 0 15px 5px #facc15;
+      animation: pulse-dot 5s infinite ease-in-out;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+    .dark-theme-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        overflow: hidden;
+        z-index: -1;
+    }
+    .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        animation: twinkle linear infinite;
+    }
+    @keyframes twinkle {
+        0% { opacity: 0; transform: translateY(0); }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; transform: translateY(50px); }
+    }
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .dark .glass-effect {
+       background: rgba(30, 41, 59, 0.2); /* bg-slate-800 com alpha */
+       border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+        "react-markdown": "https://aistudiocdn.com/react-markdown@^9.0.1"
+      }
+    }
+  </script>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

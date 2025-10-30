@@ -1,0 +1,5 @@
+{
+  "name": "Copiloto VIRTUS - Desafio 01",
+  "description": "Solução PoC para o Desafio 01 do edital VIRTUS, atuando como um copiloto para formatação de relatórios de incentivos fiscais como Regime Automotivo, Lei de Informática e MOVER.",
+  "requestFramePermissions": []
+}
