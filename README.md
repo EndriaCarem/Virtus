@@ -1,7 +1,7 @@
 <div align="center">
   <img src="assets/logo.svg" alt="Logo Copiloto de Relatórios" width="520" />
-  <h1>Copiloto de Relatórios</h1>
-  <p><em>PoC do Desafio 01 — VIRTUS</em></p>
+  <h1>Virtus</h1>
+  <p><em>Sistema de Formatação de documentos RA, PPB, MOVER  </em></p>
 </div>
 
 ## Visão Geral
